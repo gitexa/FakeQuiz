@@ -3,7 +3,6 @@ import  { AppRegistry, StyleSheet, Text, View, Image } from 'react-native';
 
 class Article extends React.Component {
 
-
   render() {
 
     let a = (this.props.artikel) ? require("./article1.png") : (this.props.artikel2) ? require("./article2.png") : require("./article3.png");
@@ -22,14 +21,31 @@ class Article extends React.Component {
 
     return (
       <View>
-        <Text> {this.props.headline} </Text>
         <Image
           style={{width: 350, height: 300}}
           source={a} />
-        <Text> {this.props.text} </Text>
+        <Text style = {styles.headline}> {this.props.headline} </Text>
+        <Text style = {styles.summary}> {this.props.text} </Text>
       </View>
      );
    }
 }
 
 export default Article;
+
+const styles = StyleSheet.create({
+  headline: {
+    fontSize: 40,
+    flex: 0.7,
+    textAlign: 'center',
+    justifyContent: 'center',
+  },
+  summary: {
+    fontSize: 30,
+    flex: 2,
+    textAlign: 'center',
+    justifyContent: 'center',
+  }
+
+
+});
