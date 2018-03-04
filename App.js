@@ -1,28 +1,46 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 import Article from './components/Article/Article.js';
+import HotNews from './components/HotNews/HotNews.js'
 import Swiper from  'react-native-swiper';
 import TinderSwiper from 'react-native-swiper-animated';
 
+const image1 = require('./article1.png')
+const image2 = require('./article2.png')
+const image3 = require('./article3.png')
+
+const data = [
+    {
+      name: 'Artikel_1',
+      image: image2,
+    },
+    {
+      name: 'Artikel_2',
+      image: image1,
+      subtitle: ' '
+    },
+    {
+      name: 'Artikel_3',
+      image: image3,
+      subtitle: ' '
+    }
+]
+
+
+
+
 export default class App extends React.Component {
+
   render() {
+
     return (
+
 
       <View style={styles.container}>
 
-        <TinderSwiper style={styles.wrapper} smoothTransition={false} loop={false} loopJump={0} backPressToBack={false}>
-            <View style={styles.slide1}>
-              <Article artikel={true} artikel2={true} headline="Trump and the Media!" text = "This big fucking thing is actually flying."/>
-            </View>
-            <View style={styles.slide2}>
-              <Article artikel={false} artikel2={true} headline="Football" text = "This big fucking thing is actually flying."/>
-            </View>
-            <View style={styles.slide3}>
-              <Article artikel={false} artikel2={false} headline="Gayparade" text = "This big fucking thing is actually flying."/>
-            </View>
-        </TinderSwiper>
+        <HotNews daten={data}/>
 
-        </View>
+      </View >
 
     );
   }
