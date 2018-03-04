@@ -1,29 +1,27 @@
 import React from 'react';
-import   {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View } from 'react-native';
-
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import Article from './components/Article/Article.js';
 import Swiper from  'react-native-swiper';
 
 export default class App extends React.Component {
   render() {
     return (
 
+
+
       <View style={styles.container}>
+
         <Text>Open up App.js to start working on your app!</Text>
-        <Text>Finally!</Text>
 
         <Swiper style={styles.wrapper} showsButtons={true}>
           <View style={styles.slide1}>
-            <Text style={styles.text}>Hello Swiper</Text>
+            <Article artikel={true} artikel2={true} headline="Trump and the Media!" text = "This big fucking thing is actually flying."/>
           </View>
           <View style={styles.slide2}>
-            <Text style={styles.text}>Beautiful</Text>
+            <Article artikel={false} artikel2={true} headline="Football" text = "This big fucking thing is actually flying."/>
           </View>
           <View style={styles.slide3}>
-            <Text style={styles.text}>And simple</Text>
+            <Article artikel={false} artikel2={false} headline="Gayparade" text = "This big fucking thing is actually flying."/>
           </View>
         </Swiper>
 
